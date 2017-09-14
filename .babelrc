@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    "styled-jsx/babel",
+    "react-require"
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  }
+}
