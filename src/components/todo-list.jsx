@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 let TodoList = (props) => (
   <ul>
     {
-      props.todos.map((todo) => (<li>{todo.text}</li>))
+      props.todos.map((todo) => (<li key={todo.id}>{todo.text}</li>))
     }
   </ul>
 );
