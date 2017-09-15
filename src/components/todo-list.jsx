@@ -1,11 +1,25 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { toggleTodo } from 'redux/modules/todos';
 
-let TodoList = (props) => (
+let TodoList = ({todos, dispatch}) => (
   <ul>
     {
-      props.todos.map((todo) => (<li key={todo.id}>{todo.text}</li>))
+      todos.map((todo) => {
+        return (
+          <li key={todo.id}
+            onClick={() => dispatch(toggleTodo(todo.id))}
+            className={todo.completed ? 'completed' : ''}>
+            {todo.text}
+          </li>
+        );
+      })
     }
+    <style jsx>{`
+      .completed {
+        text-decoration: line-through;
+      }
+    `}</style>
   </ul>
 );
 
