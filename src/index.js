@@ -7,6 +7,7 @@ import store from 'redux/store';
 import TodoHeader from 'components/todo-header';
 import TodoList from 'components/todo-list';
 import AddTodo from 'components/add-todo';
+import TodoFilter from 'components/todo-filter';
 
 class TodoApp extends React.Component {
   render() {
@@ -15,7 +16,8 @@ class TodoApp extends React.Component {
         <TodoHeader />
         <AddTodo />
         <TodoList />
-       </div>
+        <TodoFilter />
+      </div>
     );
   }
 };

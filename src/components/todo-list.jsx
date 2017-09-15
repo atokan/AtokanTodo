@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleTodo } from 'redux/modules/todos';
+import { filterTodos } from 'redux/modules/filter-todos'
 
-let TodoList = ({todos, dispatch}) => (
+
+let TodoList = ({todos, filter, dispatch}) => (
   <ul>
     {
-      todos.map((todo) => {
+      todos.filter(todo => filterTodos(todo, filter)).map((todo) => {
         return (
           <li key={todo.id}
             onClick={() => dispatch(toggleTodo(todo.id))}
@@ -24,7 +26,10 @@ let TodoList = ({todos, dispatch}) => (
 );
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return {
+    todos: state.todos,
+    filter: state.filterTodos
+  }
 }
 
 TodoList = connect(mapStateToProps)(TodoList)
