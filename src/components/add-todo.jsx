@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { addTodo } from 'redux/modules/todos';
+
 class AddTodo extends React.Component {
   constructor(props) {
     super(props);
@@ -10,24 +12,21 @@ class AddTodo extends React.Component {
     this.setState({value: event.target.value});
   }
 
-  handleClick(event) {
+  handleSubmit(event) {
+    event.preventDefault();
+
     if (this.state.value != '') {
-      this.props.dispatch({
-        type: 'ADD_TODO',
-        text: this.state.value,
-      });
+      this.props.dispatch(addTodo(this.state.value));
       this.setState(prevState => ({value: ''}));
     }
   }
 
   render () {
     return (
-      <div>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <input type="text" value={this.state.value} onChange={this.handleChange.bind(this)}/>
-        <button onClick={this.handleClick.bind(this)}>
-          Add todo
-        </button>
-    </div>
+        <button type="submit">Add todo</button>
+      </form>
    );
   }
 };

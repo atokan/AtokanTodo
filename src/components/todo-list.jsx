@@ -10,7 +10,6 @@ let TodoList = (props) => (
 );
 
 function mapStateToProps(state) {
-  console.log(state);
   return { todos: state.todos }
 }
 
