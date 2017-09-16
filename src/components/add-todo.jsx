@@ -31,7 +31,7 @@ class AddTodo extends React.Component {
         <input
           type="text"
           value={this.state.value}
-          placeholder="New todo"
+          placeholder="New todo..."
           ref={(input) => { this.textInput = input; }}
           onChange={this.handleChange.bind(this)}
           className="add-todo__input" />
@@ -81,7 +81,6 @@ class AddTodo extends React.Component {
           }
           .add-todo__input::placeholder {
             color: #b3b3b3;
-            text-transform: uppercase;
             opacity:  1;
           }
         `}</style>
