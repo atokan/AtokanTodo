@@ -4,7 +4,6 @@ import filterTodos from './modules/filter-todos';
 import { loadState, saveState } from '../localStorage';
 import throttle from 'lodash/throttle';
 
-
 const mainReducer = combineReducers({todos, filterTodos})
 const persistedState = loadState();
 
