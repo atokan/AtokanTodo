@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 import todos from './modules/todos';
 import filterTodos from './modules/filter-todos';
-import { loadState, saveState } from '../localStorage';
+import { loadState, saveState } from '../services/localStorage';
 import throttle from 'lodash/throttle';
 
 const mainReducer = combineReducers({todos, filterTodos})

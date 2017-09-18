@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 const Root = ({store}) => (
   <Provider store={store}>
     <BrowserRouter>
-      <Route path="/" component={TodoApp} />
+      <Route exact path="/" component={TodoApp} />
     </BrowserRouter>
   </Provider>
 )

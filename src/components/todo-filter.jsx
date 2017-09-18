@@ -19,7 +19,6 @@ const TodoFilter = () => (
         box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
         border-radius: 0 0 3px 3px;
         border: none;
-        order: -1;
       }
 
       .filters__title{

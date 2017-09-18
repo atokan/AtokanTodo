@@ -6,9 +6,9 @@ import TodoFilter from 'components/todo-filter';
 const TodoApp = () => (
   <div className="todo-app">
     <TodoHeader />
+    <TodoFilter />
     <AddTodo />
     <TodoList />
-    <TodoFilter />
     <style jsx>{`
       .todo-app {
         background: #ecf0f1
