@@ -21,18 +21,14 @@ class AddTodo extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.textInput.focus();
-  }
-
   render () {
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="add-todo">
         <input
+          autoFocus
           type="text"
           value={this.state.value}
           placeholder="New todo..."
-          ref={(input) => { this.textInput = input; }}
           onChange={this.handleChange.bind(this)}
           className="add-todo__input" />
         <button className="add-todo__button">Add Todo</button>
