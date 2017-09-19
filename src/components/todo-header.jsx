@@ -1,5 +1,5 @@
 const TodoHeader = () => (
-  <h2>
+  <h2 className="todo-header">
     Todo App
   </h2>
 );

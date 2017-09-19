@@ -7,12 +7,16 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "build-prod": "webpack -p",
     "dev": "webpack-dev-server --open"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "styled-jsx": "^1.0.10",
     "uuid": "^3.1.0"
@@ -24,10 +28,12 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "file-loader": "^0.11.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "redux-devtools": "^3.4.0",
     "webpack": "^3.5.6",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.8.1"
   }
 }
