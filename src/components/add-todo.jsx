@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { addTodo } from 'redux/modules/todos';
+import AddImg from 'assets/images/add.svg';
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class AddTodo extends React.Component {
             cursor: pointer;
             background-repeat: no-repeat;
             background-position: 28px 16px;
-            background-image: url("/public/images/add.svg");
+            background-image: url(${ AddImg });
           }
 
           .add-todo__button:focus {

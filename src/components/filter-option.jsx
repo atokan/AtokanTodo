@@ -9,22 +9,23 @@ function applyActiveClass(children, filter) {
 }
 
 let FilterOption = ({children, action, filter, dispatch}) => (
-    <label className="filter">
+    <div>
       <input type="radio"
-        checked={action().type == filter ? 'true' : ''}
         name="filter"
+        id={action().type}
+        value={action().type}
+        checked={action().type == filter ? 'true' : ''}
         onChange={(e) => handleChange(e, dispatch, action)}
         className="filter__option"
       />
-      <span
+      <label htmlFor={action().type}
         className={`filter__label--${children.toLowerCase()}`}
         onClick={(e) => handleChange(e, dispatch, action)}
-        >
+      >
         {children}
-      </span>
+      </label>
       <style jsx>{`
-        .filter {
-          cursor: pointer;
+        div {
           display: inline-block;
           margin-right: 30px;
         }
@@ -58,7 +59,7 @@ let FilterOption = ({children, action, filter, dispatch}) => (
           box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
         }
       `}</style>
-    </label>
+    </div>
 )
 
 function mapStateToProps(state) {

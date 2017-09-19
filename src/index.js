@@ -3,6 +3,6 @@ import store from 'redux/store';
 import Root from 'components/root';
 
 render(
-  <Root store={store}/>,
+  <Root store={store} />,
   document.getElementById("root")
 )

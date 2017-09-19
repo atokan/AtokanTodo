@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleTodo } from 'redux/modules/todos';
 import { filterTodos } from 'redux/modules/filter-todos'
+import BoxImg from 'assets/images/box.svg';
+import DoneImg from 'assets/images/done.svg';
 
 
 let TodoList = ({todos, filter, dispatch}) => (
@@ -35,14 +37,14 @@ let TodoList = ({todos, filter, dispatch}) => (
         box-sizing: border-box;
         padding: 27px 33px 0 78px;
         box-shadow: 0 1px 0 0 #e6e6e6, 0 2px 0 0 white;
-        background-image: url('/public/images/box.svg');
+        background-image: url(${ BoxImg });
         background-repeat: no-repeat;
         background-position: 28px 16px;
       }
 
       .todo-list__item--completed {
         color: #16a085;
-        background-image: url('/public/images/done.svg');
+        background-image: url(${ DoneImg });
         text-decoration: line-through;
       }
     `}</style>

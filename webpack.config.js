@@ -11,12 +11,19 @@ module.exports = {
     modules: ['node_modules', 'src'],
     extensions: ['.js', '.jsx'],
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: [/node_modules/]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
       }
     ]
   },
