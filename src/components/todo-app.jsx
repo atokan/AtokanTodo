@@ -31,6 +31,7 @@ const TodoApp = () => (
         font-size: 16px;
       }
 
+
       body {
         font-family: 'OpenSans', sans-serif;
         background: #bdc3c7;
