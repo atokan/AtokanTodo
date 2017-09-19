@@ -8,13 +8,13 @@ function applyActiveClass(children, filter) {
   return children == filter ? 'active' : ''
 }
 
-let FilterRadio = ({children, action, filter, dispatch}) => (
+let FilterOption = ({children, action, filter, dispatch}) => (
     <label className="filter">
       <input type="radio"
         checked={action().type == filter ? 'true' : ''}
         name="filter"
         onChange={(e) => handleChange(e, dispatch, action)}
-        className="filter__radio"
+        className="filter__option"
       />
       <span
         className={`filter__label--${children.toLowerCase()}`}
@@ -40,7 +40,7 @@ let FilterRadio = ({children, action, filter, dispatch}) => (
           color: #ccc;
         }
 
-        .filter__radio:checked + [class^="filter__label"] {
+        .filter__option:checked + [class^="filter__label"] {
           color: #fff;
         }
 
@@ -67,5 +67,5 @@ function mapStateToProps(state) {
   }
 }
 
-FilterRadio = connect(mapStateToProps)(FilterRadio);
-export default FilterRadio;
+FilterOption = connect(mapStateToProps)(FilterOption);
+export default FilterOption;

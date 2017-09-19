@@ -1,12 +1,14 @@
-import FilterRadio from 'components/filter-radio';
+import FilterOption from 'components/filter-option';
 import {allTodos, completedTodos, activeTodos} from 'redux/modules/filter-todos';
 
 const TodoFilter = () => (
   <fieldset className="filters">
     <legend className="filters__title">Show: </legend>
-    <FilterRadio action={allTodos}>All</FilterRadio>
-    <FilterRadio action={completedTodos}>Completed</FilterRadio>
-    <FilterRadio action={activeTodos}>Active</FilterRadio>
+    <form>
+      <FilterOption action={allTodos}>All</FilterOption>
+      <FilterOption action={completedTodos}>Completed</FilterOption>
+      <FilterOption action={activeTodos}>Active</FilterOption>
+    </form>
     <style jsx>{`
       .filters {
         height: 80px;
