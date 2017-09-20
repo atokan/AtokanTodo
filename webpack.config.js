@@ -9,7 +9,7 @@ module.exports = {
     filename: 'build.js'
   },
   resolve: {
-    modules: ['node_modules', 'src'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['.js', '.jsx'],
   },
   devtool: 'cheap-module-source-map',
